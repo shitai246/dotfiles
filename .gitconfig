@@ -1,0 +1,21 @@
+[user]
+  name = shitai246
+  email = tai@a4p.me
+[core]
+  excludesfile = /Users/tai/.gitignore_global
+  pager=less
+  editor=/usr/bin/vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color]
+ status = auto
+ ui     = auto
+ diff   = auto
+ branch = auto
+ interactive = auto
+ grep   = auto
+
