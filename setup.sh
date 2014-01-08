@@ -12,3 +12,5 @@ do
   ln -s ${THISDIR}/${FILE} ~/${FILE}
 done
 
+source ~/.bashrc
+
