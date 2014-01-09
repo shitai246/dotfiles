@@ -1,0 +1,1 @@
+/home/shiratori/.dotfiles/.vim
