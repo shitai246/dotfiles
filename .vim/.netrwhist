@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/tai/develops/workspace/rankplat/.git'
 let g:netrw_dirhist_2='/Users/tai/Documents'
 let g:netrw_dirhist_3='/Users/tai/Documents/About Stacks.lpdf'
+let g:netrw_dirhist_4='/home/t_shiratori/dotfiles/.vim/plugin'
