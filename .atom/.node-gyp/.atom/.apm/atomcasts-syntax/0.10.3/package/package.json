@@ -1,0 +1,17 @@
+{
+  "name": "atomcasts-syntax",
+  "theme": "syntax",
+  "version": "0.10.3",
+  "private": true,
+  "description": "An Atom syntax theme for vim-mode based on the RailsCasts theme.",
+  "repository": "https://github.com/ruedap/atomcasts-syntax",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://ruedap.mit-license.org/2014"
+    }
+  ],
+  "engines": {
+    "atom": ">0.64.0"
+  }
+}

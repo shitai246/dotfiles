@@ -1,0 +1,267 @@
+@import "ui-variables";
+@import "colors";
+
+.editor-colors {
+  background-color: @atomcasts-background-color_editor;
+  color: @atomcasts-color_editor;
+}
+
+.editor {
+  .markup.underline.link.hyperlink {
+    text-decoration: underline;
+  }
+  .invisible-character,
+  .indent-guide {
+    color: @atomcasts-color_invisible;
+  }
+
+  .gutter {
+    background-color: @atomcasts-background-color_gutter;
+    @_background-color: darken(@atomcasts-background-color_gutter, 5%);
+    .line-number {
+      &.cursor-line {
+        color: @atomcasts-color_gutter-line-number-cursor-line;
+      }
+      &.folded,
+      &::after {
+        background-color: @_background-color;
+      }
+      &.cursor-line-no-selection {
+        background-color: darken(@atomcasts-background-color_gutter, 2%);
+      }
+    }
+    .fold-marker::after {
+      background-color: @_background-color;
+    }
+  }
+
+  .scroll-view {
+    .overlayer {
+      .cursor {
+        border-color: @atomcasts-color_editor;
+      }
+    }
+    .underlayer {
+      .wrap-guide {
+        background-color: @atomcasts-color_invisible;
+      }
+      .selection .region {
+        background-color: @atomcasts-background-color_selection;
+      }
+    }
+  }
+}
+
+.bracket-matcher {
+  background-color: darken(@atomcasts-background-color_editor, 10%);
+  opacity: 0.25;
+}
+
+.comment {
+  color: @atomcasts-color_comment;
+}
+
+.entity, .tag {
+  color: @atomcasts-color_entity;
+}
+
+.keyword, .storage.type {
+  color: @atomcasts-color_keyword;
+}
+
+.constant {
+  color: @atomcasts-color_constant;
+
+  &.numeric,
+  &.boolean {
+    color: @atomcasts-color_numeric-constant;
+  }
+}
+
+.variable {
+  color: @atomcasts-color_variable;
+}
+
+.delimiter, .brace {
+  color: @atomcasts-color_editor;
+}
+
+.delimiter.period {
+  color: lighten(@atomcasts-color_string, 15%);
+}
+
+.invalid.deprecated {
+  text-decoration: underline;
+  color: @atomcasts-color_attention;
+}
+
+.invalid.illegal {
+  color: @atomcasts-color_attention;
+}
+
+.string {
+  color: @atomcasts-color_string;
+
+  .constant.character.escape {
+    color: @atomcasts-color_constant;
+  }
+
+  &.regexp {
+    color: @atomcasts-color_regexp;
+
+    .source.ruby.embedded,
+    .string.regexp.arbitrary-repitition {
+      color: @atomcasts-color_attention;
+    }
+  }
+}
+
+.function {
+  color: @atomcasts-color_function;
+
+  &.punctuation {
+    color: @atomcasts-color_editor;
+  }
+
+  .punctuation.definition.parameters {
+    color: @atomcasts-color_keyword;
+  }
+}
+
+.property-name {
+  color: lighten(@atomcasts-color_constant, 10%);
+}
+
+// vim-mode
+.editor.is-focused.vim-mode.command-mode:not(.mini) {
+  .cursor, .cursor.blink-off {
+    border: 0;
+    background-color: @atomcasts-color_editor;
+    visibility: visible;
+    opacity: 0.5;
+  }
+  .cursor.blink-off {
+    opacity: 0;
+  }
+  
+  .line.cursor-line {
+    background-color: @atomcasts-background-color_gutter;
+    opacity: 0.95;
+  }
+}
+
+// HTML
+.html {
+  .meta.tag.any {
+    color: @atomcasts-color_html-element;
+    .punctuation.definition.tag {
+      color: @atomcasts-color_html-element;
+    }
+    .entity.name.tag {
+      color: @atomcasts-color_html-element;
+    }
+  }
+}
+
+// Haml
+.haml {
+  .punctuation.definition.tag {
+    color: @atomcasts-color_punctuation-definition;
+  }
+  .entity.name.tag {
+    color: @atomcasts-color_html-element;
+    &.class {
+      color: @atomcasts-color_css-class;
+    }
+    &.id {
+      color: @atomcasts-color_css-id;
+    }
+  }
+  .source.embedded {
+    .entity.name.tag {
+      color: @atomcasts-color_keyword;
+    }
+  }
+}
+
+// CSS
+.css {
+  .entity.name.tag {
+    color: @atomcasts-color_css-element;
+  }
+  .support.type.property-name {
+    color: @atomcasts-color_css-property-name;
+  }
+  .keyword.other {
+    color: @atomcasts-color_regexp;
+    &.unit {
+      color: @atomcasts-color_numeric-constant;
+    }
+  }
+}
+
+// SCSS
+.scss {
+  .entity.attribute-name.placeholder {
+    color: @atomcasts-color_scss-placeholder;
+    .punctuation.definition.entity {
+      color: @atomcasts-color_keyword;
+    }
+  }
+  .meta.attribute-selector {
+    color: @atomcasts-color_css-element;
+    .punctuation {
+      color: @atomcasts-color_css-element;
+    }
+    .entity.attribute-name {
+      color: @atomcasts-color_css-class;
+    }
+    .string {
+      .punctuation {
+        color: @atomcasts-color_string;
+      }
+    }
+  }
+}
+
+// Sass
+.sass {
+  .meta.variable-declaration,
+  .meta.property-value {
+    color: @atomcasts-color_editor;
+    .punctuation.definition.entity {
+      color: @atomcasts-color_variable;
+    }
+    .keyword.other.unit {
+      color: @atomcasts-color_numeric-constant;
+    }
+  }
+  .meta.property-name {
+    color: @atomcasts-color_editor;
+    .support.type.property-name {
+      color: @atomcasts-color_css-property-name;
+    }
+  }
+}
+
+// Markdown
+.gfm {
+  &.heading {
+    &:extend(.function);
+  }
+
+  &.raw {
+    color: @atomcasts-color_function;
+  }
+
+  &.underline.link {
+    &:extend(.string);
+  }
+}
+
+// ERB
+.erb {
+  .punctuation.section.embedded {
+    color: @atomcasts-color_keyword;
+  }
+}
