@@ -2,7 +2,7 @@
 # setup dotfiles
 
 THISDIR=`cd $(dirname $0);pwd`
-DOTFILES=(.bashrc .gitconfig .gitignore_global .vimrc .vim .atom)
+DOTFILES=(.bashrc .zshrc .gitconfig .gitignore_global .vimrc .vim .claude)
 
 for FILE in ${DOTFILES[@]}
 do
